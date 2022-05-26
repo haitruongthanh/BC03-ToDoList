@@ -68,6 +68,21 @@ document.getElementById("two").addEventListener("click", function () {
   });
   renderList(listTaskSorted);
 });
+document.getElementById("three").addEventListener("click", function () {
+  let listTaskSorted = listTask.sort((task1, task2) => {
+    let contentTask1 = task1.content.toLowerCase();
+    let contentTask2 = task2.content.toLowerCase();
+
+    if (contentTask1 > contentTask2) {
+      return -1;
+    }
+    if (contentTask1 < contentTask2) {
+      return 1;
+    }
+    return 1;
+  });
+  renderList(listTaskSorted);
+});
 
 window.addNewTask = addNewTask;
 window.removeTask = removeTask;
